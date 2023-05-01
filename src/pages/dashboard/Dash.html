@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="dashboard.css">
+      <meta http-equiv="refresh" content="50000">
+      <title>
+        Dashboard
+   </title>
+  
+    </head>
+    
+    <body>
+        <div>
+        <center>
+       <h1>Student Muster</h1>
+       <script >
+        if(window.XMLHttpRequest)
+        {
+            xmlhttp=new XMLHttpRequest();
+        }
+        
+        xmlhttp.open("GET","dashBoard.xml",false);
+        xmlhttp.send();
+        xmlDoc=xmlhttp.responseXML;
+        document.write("<table border=1 width='50%' style='font-size:20px;'>");
+
+        document.write("<tr><th>Sr</th><th>Year</th><th>Name</th><th>Marks</th><th>Grade</th></tr>");
+        var x=xmlDoc.getElementsByTagName("Sr");
+        for(i=0;i<x.length;i++)
+        {
+            document.write("<tr><td>");
+            document.write(xmlDoc.getElementsByTagName("Sr")[i].childNodes[0].nodeValue);
+            document.write("</td><td>");
+            document.write(xmlDoc.getElementsByTagName("Year")[i].childNodes[0].nodeValue);
+            document.write("</td><td>");
+            document.write(xmlDoc.getElementsByTagName("Name")[i].childNodes[0].nodeValue);
+            document.write("</td><td>");
+            document.write(xmlDoc.getElementsByTagName("Marks")[i].childNodes[0].nodeValue);
+            document.write("</td><td>");
+            document.write(xmlDoc.getElementsByTagName("Grade")[i].childNodes[0].nodeValue);
+            document.write("</td></tr>");
+        }
+        document.write("</table>");
+        
+        </script>
+        </center>
+        </div>
+    </body>
+</html>

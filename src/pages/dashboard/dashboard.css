@@ -1,0 +1,21 @@
+table {
+   
+    width: 50%;
+    border: none;
+
+    }         
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+
+.tr,td {
+    background-color: #56bdc1}
+
+th {
+    background-color: #56bdc1;
+    color: white;
+}
